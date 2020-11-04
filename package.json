@@ -1,0 +1,21 @@
+{
+  "name": "JenkinsPRHandlerForSpecificBranch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "dlv": "^1.1.3",
+    "express": "^4.17.1",
+    "form-data": "^3.0.0",
+    "joi": "^13.1.0",
+    "node": "^15.0.1"
+  }
+}
