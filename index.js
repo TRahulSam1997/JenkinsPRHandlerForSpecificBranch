@@ -30,6 +30,7 @@ app.post("/hook", (req, res) => {
   let commitURL = getCommitURL(payload);
   let action = getAction(payload);
   let XGithubDelivery = getXGithubDelivery(header);
+  let XGithubEvent = getXGithubEvent(header);
   let jenkinsTargetUrl = process.env.JENKINS_BASE_URL;
   let token = process.env.JENKINS_TOKEN;
   let basicAuth = process.env.JENKINS_BASIC_AUTH;
@@ -37,9 +38,9 @@ app.post("/hook", (req, res) => {
   let message = process.env.MESSAGE;
   let accessToken = process.env.GITHUB_TOKEN;
 
-  if ((action == "opened") && (pullRequestBranch || baseBranch || commitURL == undefined)) {
+  if ((action == "opened" && XGithubEvent == "pull_request") && (pullRequestBranch || baseBranch || commitURL == undefined)) {
     updateCommitStatus(commitURL, state, jenkinsTargetUrl, message, accessToken);
-    postToJenkins(payload, jenkinsTargetUrl, token, basicAuth, XGithubDelivery, baseBranch, process.env.SUBJECT_BRANCH); /* change Dev to an env variable */
+    postToJenkins(payload, jenkinsTargetUrl, token, basicAuth, XGithubDelivery, baseBranch, process.env.SUBJECT_BRANCH); 
   }
 
 });
@@ -111,4 +112,8 @@ function getAction(payload) {
 
 function getXGithubDelivery(header) {
   return commitURL = delve(header, 'x-github-delivery');
+}
+
+function getXGithubEvent(header) {
+  return commitURL = delve(header, 'x-github-event');
 }
