@@ -11,3 +11,4 @@ app:
       GITHUB_STATE: 'pending'
       MESSAGE: 'Job in Jenkins queue, pending.'
       JENKINS_TOKEN: 'rahul'
+      SUBJECT_BRANCH: '7.4.0'

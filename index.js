@@ -39,7 +39,7 @@ app.post("/hook", (req, res) => {
 
   if ((action == "opened") && (pullRequestBranch || baseBranch || commitURL == undefined)) {
     updateCommitStatus(commitURL, state, jenkinsTargetUrl, message, accessToken);
-    postToJenkins(payload, jenkinsTargetUrl, token, basicAuth, XGithubDelivery, baseBranch, "dev"); /* change Dev to an env variable */
+    postToJenkins(payload, jenkinsTargetUrl, token, basicAuth, XGithubDelivery, baseBranch, process.env.SUBJECT_BRANCH); /* change Dev to an env variable */
   }
 
 });
