@@ -1,5 +1,5 @@
 app:
-    image: rahul1997/jenkins-prhandler-spc-branch
+    image: jenkins-prhandler-spc-branch
     ports:
       - "8081:8080"
     # Set all of the ENV variables
