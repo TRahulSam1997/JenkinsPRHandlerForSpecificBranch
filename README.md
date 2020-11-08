@@ -24,4 +24,4 @@
   ```
   **PORT:** By defualt I've set the port to 8080.
 
-  5) run `up`
+  5) run `docker-compose up`
