@@ -1,14 +1,15 @@
-app:
-    image: jenkins-prhandler-spc-branch
-    ports:
-      - "8081:8080"
-    # Set all of the ENV variables
-    environment:
-      PORT: undefined
-      GITHUB_TOKEN: undefined
-      JENKINS_BASE_URL: undefined
-      JENKINS_BASIC_AUTH: undefined
-      GITHUB_STATE: undefined
-      MESSAGE: undefined
-      JENKINS_TOKEN: undefined
-      SUBJECT_BRANCH: undefined
+services:
+  app:
+      build: .
+      ports:
+        - "8081:8080"
+      # Set all of the ENV variables
+      environment:
+        PORT: undefined
+        GITHUB_TOKEN: undefined
+        JENKINS_BASE_URL: undefined
+        JENKINS_BASIC_AUTH: undefined
+        GITHUB_STATE: undefined
+        MESSAGE: undefined
+        JENKINS_TOKEN: undefined
+        SUBJECT_BRANCH: undefined
