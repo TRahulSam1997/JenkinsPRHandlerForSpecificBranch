@@ -22,6 +22,6 @@
       JENKINS_TOKEN: undefined
       SUBJECT_BRANCH: undefined
   ```
-  *PORT:* By defualt I've set the port to 8080.
-  
+  **PORT:** By defualt I've set the port to 8080.
+
   5) run `up`
