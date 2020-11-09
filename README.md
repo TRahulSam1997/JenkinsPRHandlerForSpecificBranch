@@ -23,5 +23,12 @@
       SUBJECT_BRANCH: undefined
   ```
   **PORT:** By defualt I've set the port to 8080.
+  **GITHUB_TOKEN:**
+  **JENKINS_BASE_URL:**
+  **JENKINS_BASIC_AUTH:**
+  **GITHUB_STATE:**
+  **MESSAGE:**
+  **JENKINS_TOKEN:**
+  **SUBJECT_BRANCH:**
 
   5) run `docker-compose up -d`

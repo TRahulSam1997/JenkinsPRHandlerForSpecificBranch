@@ -14,7 +14,7 @@ const port = process.env.PORT || 8080;
 app.use(bodyParser.json());
 
 // Start express on the defined port
-app.listen(port, () => console.log(`Listening...`));
+app.listen(port, () => console.log(`Listening on ${port}...`));
 
 app.get("/", (req, res) => {
   res.send(`"Above all, don't lie to yourself. The man who lies to himself and listens to his own lie comes to a point that he cannot distinguish the truth within him, or around him, and so loses all respect for himself and for others. And having no respect he ceases to love." ― Fyodor Dostoevsky, The Brothers Karamazov`);
@@ -40,7 +40,7 @@ app.post("/hook", (req, res) => {
 
   if ((action == "opened" && XGithubEvent == "pull_request") && (pullRequestBranch || baseBranch || commitURL == undefined)) {
     updateCommitStatus(commitURL, state, jenkinsTargetUrl, message, accessToken);
-    postToJenkins(payload, jenkinsTargetUrl, token, basicAuth, XGithubDelivery, baseBranch, process.env.SUBJECT_BRANCH); 
+    postToJenkins(payload, jenkinsTargetUrl, token, basicAuth, XGithubDelivery, baseBranch, process.env.SUBJECT_BRANCH);
   }
 
 });
