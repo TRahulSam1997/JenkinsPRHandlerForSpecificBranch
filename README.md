@@ -28,7 +28,7 @@
   
   **JENKINS_BASE_URL:** The Jenkins job you are targetting to receive the webhook content. Simply copy the URL of whatever job you wish to be triggered. <br />
   
-  **JENKINS_BASIC_AUTH:** This service will create POST request. Therefore, you need to create a basic authentication token. Use [Postman] (https://learning.postman.com/docs/sending-requests/authorization/#basic-auth). <br />
+  **JENKINS_BASIC_AUTH:** This service will create POST request. Therefore, you need to create a basic authentication token. Use [Postman](https://learning.postman.com/docs/sending-requests/authorization/#basic-auth). <br />
   
   **GITHUB_STATE:** The service uses [Create a commit status] (https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#create-a-commit-status) API request. You need to set the state of the status: error, failure, pending or success. <br />
   
