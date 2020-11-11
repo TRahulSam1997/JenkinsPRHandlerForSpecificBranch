@@ -24,7 +24,7 @@
   ```
   **PORT:** By defualt I've set the port to 8080. <br />
   
-  **GITHUB_TOKEN:** [Docker](https://www.docker.com/) [Personal access token] (https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/) creating-a-personal-access-token to update the commit status in GitHub. <br />
+  **GITHUB_TOKEN:** [Personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/) creating-a-personal-access-token to update the commit status in GitHub. <br />
   
   **JENKINS_BASE_URL:** The Jenkins job you are targetting to receive the webhook content. Simply copy the URL of whatever job you wish to be triggered. <br />
   
