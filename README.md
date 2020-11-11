@@ -24,13 +24,13 @@
   ```
   **PORT:** By defualt I've set the port to 8080. <br />
   
-  **GITHUB_TOKEN:** Creating a [Personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/) to update the commit status in GitHub. <br />
+  **GITHUB_TOKEN:** Creating a [Personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) to update the commit status in GitHub. <br />
   
   **JENKINS_BASE_URL:** The Jenkins job you are targetting to receive the webhook content. Simply copy the URL of whatever job you wish to be triggered. <br />
   
   **JENKINS_BASIC_AUTH:** This service will create POST request. Therefore, you need to create a basic authentication token. Use [Postman](https://learning.postman.com/docs/sending-requests/authorization/#basic-auth). <br />
   
-  **GITHUB_STATE:** The service uses [Create a commit status] (https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#create-a-commit-status) API request. You need to set the state of the status: error, failure, pending or success. <br />
+  **GITHUB_STATE:** The service uses [Create a commit status](https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#create-a-commit-status) API request. You need to set the state of the status: error, failure, pending or success. <br />
   
   **MESSAGE:** You can set a message on the commit page, e.g. Jenkins Tests Passed. <br />
   
