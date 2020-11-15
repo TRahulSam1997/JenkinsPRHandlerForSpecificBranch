@@ -38,7 +38,7 @@ app.post("/hook", (req, res) => {
   let message = process.env.MESSAGE;
   let accessToken = process.env.GITHUB_TOKEN;
 
-  if ((action == "opened" && XGithubEvent == "pull_request") && (pullRequestBranch || baseBranch || commitURL == undefined)) {
+  if ((action == "opened" && XGithubEvent == "pull_request") && (pullRequestBranch || baseBranch || commitURL != undefined)) {
     updateCommitStatus(commitURL, state, jenkinsTargetUrl, message, accessToken);
     postToJenkins(payload, jenkinsTargetUrl, token, basicAuth, XGithubDelivery, baseBranch, process.env.SUBJECT_BRANCH);
   }
