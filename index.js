@@ -38,15 +38,14 @@ app.post("/hook", (req, res) => {
   let message = process.env.MESSAGE;
   let accessToken = process.env.GITHUB_TOKEN;
 
-  if ((action == "opened" && XGithubEvent == "pull_request") && (pullRequestBranch || baseBranch || commitURL != undefined)) {
+  if ((action == "opened" && XGithubEvent == "pull_request") && (baseBranch == process.env.SUBJECT_BRANCH) && (pullRequestBranch || baseBranch || commitURL != undefined)) {
     updateCommitStatus(commitURL, state, jenkinsTargetUrl, message, accessToken);
     postToJenkins(payload, jenkinsTargetUrl, token, basicAuth, XGithubDelivery, baseBranch, process.env.SUBJECT_BRANCH);
   }
 
 });
 
-function postToJenkins(payload, jenkinsTargetUrl, token, basicAuth, XGithubDelivery, baseBranch, subjectBranch) {
-  if (baseBranch==subjectBranch) {
+function postToJenkins(payload, jenkinsTargetUrl, token, basicAuth, XGithubDelivery) {
     let data = new FormData();
 
     data.append('payload', `${JSON.stringify(payload)}`);
@@ -70,7 +69,6 @@ function postToJenkins(payload, jenkinsTargetUrl, token, basicAuth, XGithubDeliv
     .catch(function (error) {
       console.log(error);
     });
-  }
 }
 
 function updateCommitStatus(commitURL, state, jenkinsTargetUrl, message, accessToken) {
