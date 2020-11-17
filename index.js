@@ -41,6 +41,8 @@ app.post("/hook", (req, res) => {
   if ((action == "opened" && XGithubEvent == "pull_request") && (baseBranch == process.env.SUBJECT_BRANCH) && (pullRequestBranch || baseBranch || commitURL != undefined)) {
     updateCommitStatus(commitURL, state, jenkinsTargetUrl, message, accessToken);
     postToJenkins(payload, jenkinsTargetUrl, token, basicAuth, XGithubDelivery, baseBranch, process.env.SUBJECT_BRANCH);
+  } else {
+    console.log(`Request not made: \n\n Action: ${action} \n XGithubEvent: ${XGithubEvent} \n pullRequestBranch: ${pullRequestBranch} \n commitURL: ${commitURL} \n Subject Branch: ${process.env.SUBJECT_BRANCH} \n Base Branch: ${baseBranch}`);
   }
 
 });
