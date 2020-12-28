@@ -1,9 +1,9 @@
-Medium Article: https://trahulsam.medium.com/trigger-jenkins-jobs-only-when-pull-requests-are-made-to-specific-github-branches-189822a21ed
-
 # Jenkins Pull Request Handler For A Specific Branch
   The plugins I could find to integrate Jenkins with GitHub did not allow me to target a specific branch, or maybe they did, and I missed it. Furthermore, I wanted to have the freedom to manipulate the webhook GitHub sends when some action is done to a repository.
 
   So, I built this simple Node.js service which acts as a conduit between GitHub and Jenkins.
+
+Medium Article: https://trahulsam.medium.com/trigger-jenkins-jobs-only-when-pull-requests-are-made-to-specific-github-branches-189822a21ed
 
 ### What does this service do?
   It captures the payload, allows you to manipulate it and then sends a POST request to Jenkins. For my use case, I have specified the POST request to be sent to Jenkins (triggering a pipeline) only when a pull request is made to a branch I specify in the service.
