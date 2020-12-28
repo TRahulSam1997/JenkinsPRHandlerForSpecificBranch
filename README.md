@@ -1,3 +1,5 @@
+Medium Article: https://trahulsam.medium.com/trigger-jenkins-jobs-only-when-pull-requests-are-made-to-specific-github-branches-189822a21ed
+
 # Jenkins Pull Request Handler For A Specific Branch
   The plugins I could find to integrate Jenkins with GitHub did not allow me to target a specific branch, or maybe they did, and I missed it. Furthermore, I wanted to have the freedom to manipulate the webhook GitHub sends when some action is done to a repository.
 
